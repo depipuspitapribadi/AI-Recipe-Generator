@@ -1,0 +1,238 @@
+html,
+body,
+#app {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition: background-image 1s ease;
+
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  gap: 16px;
+
+  color: white;
+}
+
+.card {
+  padding: 40px;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  backdrop-filter: blur(5px);
+
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3);
+
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.card-recipe {
+  padding: 40px;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  backdrop-filter: blur(5px);
+
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3);
+
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+
+  max-height: 20vh;
+  overflow-y: auto;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+input {
+  width: 350px;
+  padding: 12px;
+
+  background: transparent;
+  color: #fff;
+
+  border: 2px dashed rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+
+  font-size: 16px;
+  outline: none;
+}
+
+button {
+  padding: 12px 24px;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+  font-size: 16px;
+  background: #ffbb00;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 4px 0;
+}
+
+.hero {
+  font-family: "Inter", sans-serif;
+  justify-content: center;
+}
+
+.hero .icon {
+  font-size: 72px;
+  margin-bottom: 10px;
+  animation: swingRotate 2.5s ease-in-out infinite;
+}
+
+.hero h2 {
+  font-size: 36px;
+  font-weight: 600;
+  margin: 0;
+  
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid white;
+
+  width: 0;
+  animation: typing 6s steps(30, end) infinite, blink 0.7s infinite;
+
+}
+
+.hero p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+.filter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  color: white;
+}
+
+.filter label {
+  font-size: 12px;
+  opacity: 0.8;
+}
+select {
+  width: 230px;
+  padding: 10px;
+  border-radius: 8px;
+  color: rgb(0, 0, 0);
+  border: 2px dashed rgba(255,255,255,0.5);
+}
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.sign-me img {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  width: 72px;
+  height: 72px;
+
+  font-family: "Inter", sans-serif;
+
+  padding: 8px 12px;
+
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+
+  cursor: default;
+
+  transition: all 0.3s ease;
+    z-index: 9999;
+}
+
+/* Animasi */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes swingRotate {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(-15deg); }
+  50%  { transform: rotate(0deg); }
+  75%  { transform: rotate(15deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* efek ketik */
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  40% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+/* cursor blink */
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
